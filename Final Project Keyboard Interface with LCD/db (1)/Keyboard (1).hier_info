@@ -1,0 +1,84 @@
+|Keyboard
+clk => debounce:debounce_ps2_clk.clk
+clk => ps2_code[0]~reg0.CLK
+clk => ps2_code[1]~reg0.CLK
+clk => ps2_code[2]~reg0.CLK
+clk => ps2_code[3]~reg0.CLK
+clk => ps2_code[4]~reg0.CLK
+clk => ps2_code[5]~reg0.CLK
+clk => ps2_code[6]~reg0.CLK
+clk => ps2_code[7]~reg0.CLK
+clk => ps2_code_new~reg0.CLK
+clk => count_idle[0].CLK
+clk => count_idle[1].CLK
+clk => count_idle[2].CLK
+clk => count_idle[3].CLK
+clk => count_idle[4].CLK
+clk => count_idle[5].CLK
+clk => count_idle[6].CLK
+clk => count_idle[7].CLK
+clk => count_idle[8].CLK
+clk => count_idle[9].CLK
+clk => count_idle[10].CLK
+clk => count_idle[11].CLK
+clk => sync_ffs[0].CLK
+clk => sync_ffs[1].CLK
+clk => debounce:debounce_ps2_data.clk
+ps2_clk => sync_ffs[0].DATAIN
+ps2_data => sync_ffs[1].DATAIN
+ps2_code_new <> ps2_code_new~reg0
+ps2_code[0] <> ps2_code[0]~reg0
+ps2_code[1] <> ps2_code[1]~reg0
+ps2_code[2] <> ps2_code[2]~reg0
+ps2_code[3] <> ps2_code[3]~reg0
+ps2_code[4] <> ps2_code[4]~reg0
+ps2_code[5] <> ps2_code[5]~reg0
+ps2_code[6] <> ps2_code[6]~reg0
+ps2_code[7] <> ps2_code[7]~reg0
+LCD_ENABLE <= LCD_ENABLE~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LCD_RW <= LCD_RW~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LCD_RS <= LCD_RS~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LCD_DATA[0] <= LCD_DATA[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LCD_DATA[1] <= LCD_DATA[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LCD_DATA[2] <= LCD_DATA[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LCD_DATA[3] <= LCD_DATA[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LCD_DATA[4] <= LCD_DATA[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LCD_DATA[5] <= LCD_DATA[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LCD_DATA[6] <= LCD_DATA[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LCD_DATA[7] <= LCD_DATA[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Keyboard|debounce:debounce_ps2_clk
+clk => result~reg0.CLK
+clk => counter_out[0].CLK
+clk => counter_out[1].CLK
+clk => counter_out[2].CLK
+clk => counter_out[3].CLK
+clk => counter_out[4].CLK
+clk => counter_out[5].CLK
+clk => counter_out[6].CLK
+clk => counter_out[7].CLK
+clk => counter_out[8].CLK
+clk => flipflops[0].CLK
+clk => flipflops[1].CLK
+button => flipflops[0].DATAIN
+result <= result~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Keyboard|debounce:debounce_ps2_data
+clk => result~reg0.CLK
+clk => counter_out[0].CLK
+clk => counter_out[1].CLK
+clk => counter_out[2].CLK
+clk => counter_out[3].CLK
+clk => counter_out[4].CLK
+clk => counter_out[5].CLK
+clk => counter_out[6].CLK
+clk => counter_out[7].CLK
+clk => counter_out[8].CLK
+clk => flipflops[0].CLK
+clk => flipflops[1].CLK
+button => flipflops[0].DATAIN
+result <= result~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
